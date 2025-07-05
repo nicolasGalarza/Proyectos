@@ -8,34 +8,50 @@ body {
   min-height: 100vh;
 }
 
-.container {
+.background-wrapper {
   position: relative;
+}
+.header{
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  position: fixed;
+  display: flex;
+  background-color: antiquewhite;
+  z-index: 3;
 }
 
-.enter {
-  min-width: 100vh;
+.background1 {
+  width: 100%;
   background-image: url(../img/fondoinicio1.jpg);
   background-repeat: no-repeat;
-  background-position: center center;
-  height: 1800px;
+  background-position-x: center;
+  height: 1000px;
   background-attachment: fixed;
   background-size: cover;
-  z-index: -100;
+}
+.background2 {
+  width: 100%;
+  height: 1000px;
+  background: #000; /* o una imagen */
 }
 
-.background {
-    z-index: -50;
-}
-.symbol {
+.content{
   position: relative;
-  display: flex;
+  z-index: 2;
 }
+
+.symbol {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
 
 .symbol span {
-  position: relative;
   width: 30px;
   height: 30px;
   margin: 0 4px;
