@@ -1,0 +1,45 @@
+.quotes-card {
+  position: relative;
+}
+
+.quotes-card .card-text {
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.quotes-card .animated-border::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: var(--border-color, #e63c50);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translate(-50%, -50%);
+  animation: rotateTriangle 6s linear infinite;
+  filter: drop-shadow(0 0 10px var(--border-color, #e63c50));
+  opacity: 0.3;
+  z-index: 0;
+}
+
+#quoteText {
+  transition: opacity 0.3s ease;
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  max-width: 100%;
+}
+
+@keyframes rotateTriangle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

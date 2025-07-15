@@ -1,0 +1,165 @@
+@font-face {
+  font-family: "GameOfSquids";
+  src: url("../fonts/Game\ Of\ Squids.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.main-nav,
+.main-nav h1,
+.main-nav a,
+.main-nav li,
+.main-nav span {
+  font-family: "GameOfSquids",Arial, Helvetica, sans-serif sans-serif;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.main-nav {
+  background: linear-gradient(270deg, #c72c41, #1f5c58, #2e2e2e);
+  background-size: 600% 600%;
+  animation: gradientAnimation 40s ease infinite;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  padding-bottom: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 2;
+}
+
+.logo-cookie img {
+  width: 60px;
+  height: auto;
+}
+
+.logo-text h1,
+.logo-text h4 {
+  margin: 0;
+  color: #f8f8f5;
+  font-size: 1.3rem;
+  text-shadow: -1px -1px 0 #1f5c58, 1px -1px 0 #1f5c58, -1px 1px 0 #1f5c58,
+    1px 1px 0 #1f5c58;
+}
+
+.logo-cookie img {
+  animation: pulse 2.8s infinite ease-in-out;
+  animation-delay: 0s;
+}
+
+.logo-text h1 {
+  animation: pulse 3.2s infinite ease-in-out;
+  animation-delay: 0.4s;
+}
+
+.logo-text h4 {
+  animation: pulse 3.6s infinite ease-in-out;
+  animation-delay: 0.8s;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+}
+
+.nav-menu li a {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 1s ease;
+}
+
+.nav-menu li a:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.nav-menu li a img {
+  width: 25px;
+  height: auto;
+  border-radius: 0;
+  padding: 0;
+}
+
+.nav-menu li.play a {
+  width: 170px;
+  background-color: #2d807a;;
+  color: #f8f8f5;
+}
+
+.nav-menu li.play a:hover {
+  background-color: #e63c50;
+  box-shadow: 0 6px 8px rgba(230, 60, 80, 0.7);
+}
+
+.nav-menu li.season a {
+  width: 170px;
+  background-color: #f8f8f5;
+  color: #2d807a;
+}
+
+.nav-menu li.season a:hover {
+  background-color: #e63c50;
+  box-shadow: 0 6px 8px rgba(230, 60, 80, 0.7);
+}
+
+.nav-menu li.frostman a {
+  width: 170px;
+  background-color: #C0C0C0;
+  color: #5DADE2;
+}
+
+
+.nav-menu li.frostman a:hover {
+  background-color: #e63c50;
+  box-shadow: 0 6px 8px rgba(230, 60, 80, 0.7);
+}
+
+
+.wave-header,
+.wave-header-one {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 6000px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.wave svg {
+  display: block;
+  width: 300%;
+  height: 100%;
+}
+
+.wave-header {
+  animation: wave-header 30s linear infinite;
+}
+
+.wave-header-one {
+  animation: wave-header 30s linear infinite, desplazamiento 20s ease infinite;
+}

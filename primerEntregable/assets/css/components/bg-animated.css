@@ -1,39 +1,28 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   min-height: 100vh;
 }
 
-.container {
+.content {
   position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  z-index: 2;
 }
 
-.enter {
-  min-width: 100vh;
-  background-image: url(../img/fondoinicio1.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  height: 1800px;
-  background-attachment: fixed;
-  background-size: cover;
-}
 .symbol {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
+  width: 100%;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .symbol span {
-  position: relative;
   width: 30px;
   height: 30px;
   margin: 0 4px;
+  opacity: 0.3;
 }
 
 .circle {
@@ -43,7 +32,7 @@ body {
   border: 2px solid white;
   border-radius: 50%;
   animation: shadowPulse 3s infinite alternate, animate 15s linear infinite;
-  animation-duration: calc(120s / var(--i));
+  animation-duration: calc(150s / var(--i));
 }
 
 .triangle {
@@ -55,7 +44,7 @@ body {
   border-bottom: 34px solid white;
   filter: drop-shadow(8px -2px 0.5px #800020);
   animation: animate 15s linear infinite;
-  animation-duration: calc(120s / var(--i));
+  animation-duration: calc(170s / var(--i));
 }
 
 .square {
@@ -65,8 +54,7 @@ body {
   border: 2px solid white;
   box-shadow: 0 0 0 4px rgba(139, 195, 74, 0.4);
   animation: shadowPulse 3s infinite alternate, animate 15s linear infinite;
-  animation-duration: calc(120s / var(--i));
-  
+  animation-duration: calc(200s / var(--i));
 }
 
 @keyframes shadowPulse {
@@ -91,9 +79,9 @@ body {
 
 @keyframes animate {
   0% {
-    transform: translateY(100vh) scale(1);
+    transform: translateY(100vh) scale(0.5);
   }
   100% {
-    transform: translateY(-100vh) scale(1);
+    transform: translateY(-100vh) scale(2.5);
   }
 }

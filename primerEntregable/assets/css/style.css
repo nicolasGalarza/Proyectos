@@ -8,35 +8,170 @@ body {
   min-height: 100vh;
 }
 
-.background-wrapper {
-  position: relative;
+@font-face {
+  font-family: "GameOfSquids";
+  src: url("../fonts/Game\ Of\ Squids.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
-.header{
-  width: 100%;
-  position: fixed;
+
+.main-nav,
+.main-nav h1,
+.main-nav a,
+.main-nav li,
+.main-nav span {
+  font-family: "GameOfSquids",Arial, Helvetica, sans-serif;
+}
+
+.nav-container {
   display: flex;
-  background-color: antiquewhite;
-  z-index: 3;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
-.background1 {
-  width: 100%;
-  background-image: url(../img/fondoinicio1.jpg);
-  background-repeat: no-repeat;
-  background-position-x: center;
-  height: 1000px;
-  background-attachment: fixed;
-  background-size: cover;
-}
-.background2 {
-  width: 100%;
-  height: 1000px;
-  background: #000; /* o una imagen */
-}
-
-.content{
+.main-nav {
+  background: linear-gradient(270deg, #c72c41, #1f5c58, #2e2e2e);
+  background-size: 600% 600%;
+  animation: gradientAnimation 40s ease infinite;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   position: relative;
+  padding-bottom: 30px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   z-index: 2;
+}
+
+.logo-cookie img {
+  width: 60px;
+  height: auto;
+}
+
+.logo-text h1,
+.logo-text h4 {
+  margin: 0;
+  color: #f8f8f5;
+  font-size: 1.3rem;
+  text-shadow: -1px -1px 0 #1f5c58, 1px -1px 0 #1f5c58, -1px 1px 0 #1f5c58,
+    1px 1px 0 #1f5c58;
+}
+
+.logo-cookie img {
+  animation: pulse 2.8s infinite ease-in-out;
+  animation-delay: 0s;
+}
+
+.logo-text h1 {
+  animation: pulse 3.2s infinite ease-in-out;
+  animation-delay: 0.4s;
+}
+
+.logo-text h4 {
+  animation: pulse 3.6s infinite ease-in-out;
+  animation-delay: 0.8s;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+}
+
+.nav-menu li a {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  padding: 8px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: all 1s ease;
+}
+
+.nav-menu li a:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.nav-menu li a img {
+  width: 25px;
+  height: auto;
+  border-radius: 0;
+  padding: 0;
+}
+
+.nav-menu li.play a {
+  width: 170px;
+  background-color: #2d807a;;
+  color: #f8f8f5;
+}
+
+.nav-menu li.play a:hover {
+  background-color: #e63c50;
+  box-shadow: 0 6px 8px rgba(230, 60, 80, 0.7);
+}
+
+.nav-menu li.season a {
+  width: 170px;
+  background-color: #f8f8f5;
+  color: #2d807a;
+}
+
+.nav-menu li.season a:hover {
+  background-color: #e63c50;
+  box-shadow: 0 6px 8px rgba(230, 60, 80, 0.7);
+}
+
+.nav-menu li.frostman a {
+  width: 170px;
+  background-color: #C0C0C0;
+  color: #5DADE2;
+}
+
+
+.nav-menu li.frostman a:hover {
+  background-color: #e63c50;
+  box-shadow: 0 6px 8px rgba(230, 60, 80, 0.7);
+}
+
+
+.wave-header,
+.wave-header-one {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 6000px;
+  height: 80px;
+  overflow: hidden;
+}
+
+.wave svg {
+  display: block;
+  width: 300%;
+  height: 100%;
+}
+
+.wave-header {
+  animation: wave-header 30s linear infinite;
+}
+
+.wave-header-one {
+  animation: wave-header 30s linear infinite, desplazamiento 20s ease infinite;
 }
 
 .symbol {
@@ -50,11 +185,11 @@ body {
   z-index: 1;
 }
 
-
 .symbol span {
   width: 30px;
   height: 30px;
   margin: 0 4px;
+  opacity: 0.3;
 }
 
 .circle {
@@ -64,7 +199,7 @@ body {
   border: 2px solid white;
   border-radius: 50%;
   animation: shadowPulse 3s infinite alternate, animate 15s linear infinite;
-  animation-duration: calc(120s / var(--i));
+  animation-duration: calc(150s / var(--i));
 }
 
 .triangle {
@@ -76,7 +211,7 @@ body {
   border-bottom: 34px solid white;
   filter: drop-shadow(8px -2px 0.5px #800020);
   animation: animate 15s linear infinite;
-  animation-duration: calc(120s / var(--i));
+  animation-duration: calc(170s / var(--i));
 }
 
 .square {
@@ -86,7 +221,7 @@ body {
   border: 2px solid white;
   box-shadow: 0 0 0 4px rgba(139, 195, 74, 0.4);
   animation: shadowPulse 3s infinite alternate, animate 15s linear infinite;
-  animation-duration: calc(120s / var(--i));
+  animation-duration: calc(200s / var(--i));
 }
 
 @keyframes shadowPulse {
@@ -111,9 +246,234 @@ body {
 
 @keyframes animate {
   0% {
-    transform: translateY(100vh) scale(1);
+    transform: translateY(100vh) scale(0.5);
   }
   100% {
-    transform: translateY(-100vh) scale(1);
+    transform: translateY(-100vh) scale(2.5);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: scale(1.1);
+    filter: brightness(1.4);
+  }
+  100% {
+    transform: scale(1);
+    filter: brightness(1);
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes wave-header {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1800px;
+  }
+}
+
+@keyframes desplazamiento {
+  0%,
+  100% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+.cards-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+}
+
+.card {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 600px;
+  height: auto;
+  font-family: "GameOfSquids", sans-serif;
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  overflow: hidden;
+  margin: 20px;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.card-title {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 16px 0;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  font-size: 2rem;
+  z-index: 3;
+}
+
+.card-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+  position: relative;
+  z-index: 3;
+}
+
+.card-side-img {
+  max-width: 45%;
+  height: auto;
+  object-fit: contain;
+}
+
+.card-text h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-group button {
+  background-color: #e63c50;
+  color: white;
+  font-family: "GameOfSquids", Arial, Helvetica, sans-serif;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-group button:hover {
+  background-color: #ff4d6d;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 20px 20px 40px;
+  text-align: center;
+}
+
+.card-text p {
+  width: max-content;
+}
+
+.animated-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 16px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.color-card .animated-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  border-radius: 18px;
+  background: linear-gradient(
+    90deg,
+    var(--border-color, #2d807a),
+    transparent 50%
+  );
+  background-size: 200% 200%;
+  animation: rotateBorder 4s linear infinite;
+  filter: drop-shadow(0 0 6px var(--border-color, #2d807a));
+}
+
+
+
+@keyframes rotateBorder {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.quotes-card {
+  position: relative;
+}
+
+.quotes-card .card-text {
+  background-size: cover;
+  background-position: center;
+  padding: 20px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.quotes-card .animated-border::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: var(--border-color, #e63c50);
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  transform: translate(-50%, -50%);
+  animation: rotateTriangle 6s linear infinite;
+  filter: drop-shadow(0 0 10px var(--border-color, #e63c50));
+  opacity: 0.3;
+  z-index: 0;
+}
+
+#quoteText {
+  transition: opacity 0.3s ease;
+  word-break: break-word;
+  white-space: normal;
+  line-height: 1.4;
+  font-size: 1.2rem;
+  max-width: 100%;
+}
+
+@keyframes rotateTriangle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
 }
